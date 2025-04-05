@@ -1,11 +1,13 @@
 import express from "express";
 import pool from "./db.js";
+import cors from "cors";
 import { menu } from "./menuRoute.js";
-
+// const express = require("express");
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use(cors());
 app.use(menu);
 
 // obtenir toutes les commandes
